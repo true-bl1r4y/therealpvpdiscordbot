@@ -1,17 +1,21 @@
-"""
-Idle Discord bot
-Online only
-No commands, no events
-"""
-
 import discord
-import os
+
+Botname = "therealpvp"
+state = ""
+isbotonline = True
+
+if isbotonline:
+    state = True
 
 intents = discord.Intents.none()
+intents.guilds = True
+
 client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    """Bot connected"""
+    Botname, state
+    print(f"{Botname} is online: {state}")
 
-client.run(os.getenv("MTQ1NjY0NTY1ODY4NDU1OTUyMQ.GaOZ-M.zRnKHfGODtGGFWSLMtZn07AT2NrZ6Mcxui_pZc"))
+token = "MTQ1NjY0NTY1ODY4NDU1OTUyMQ.G78qNp.6Aj-5nBJHve601aq8cqa5NDG5E6wu6ycFEtvjs"
+client.run(token)
